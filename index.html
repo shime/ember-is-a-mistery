@@ -1,30 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mystery project</title>
+    <title>It's a mistery!</title>
+
     <script src="js/vendor/jquery/jquery.min.js"></script>
     <script src="js/vendor/handlebars/handlebars.js"></script>
     <script src="js/vendor/ember/ember.js"></script>
+    <script src="js/vendor/pagedown/Markdown.Converter.js"></script>
+    <script src="js/vendor/pagedown/Markdown.Sanitizer.js"></script>
 
-    <script src="js/app.js"></script>
-
-    <script>
-      function compile(template) {
-        var templateName = template.split('/templates/').reverse()[0].replace('.handlebars', '');
-        $.ajax({
-          url: template,
-          cache: false,
-          async: false,
-          success: function (source) {
-              var input = Ember.Handlebars.precompile(source.toString());
-              Ember.TEMPLATES[templateName] = Ember.Handlebars.template(input);
-          }
-        });
-      }
-
-      compile('http://localhost:3000/js/templates/application.handlebars');
-    </script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
 </head>
 <body>
+  <img style="height:100%; width: 100%" src="/images/sherlock.gif"></img>
 </body>
 </html>

@@ -1,7 +1,20 @@
-#!/bin/sh
+var express = require("express"),
+    app = express(),
+    port = parseInt(process.env.PORT, 10) || 3000;
+    
+app.get("/", function(req, res) {
+  res.redirect("/index.html");
+});
 
-echo "Serving at http://localhost:3000"
-python -m http.server 3000
+app.configure(function(){
+  app.use(express.methodOverride());
+  app.use(express.bodyParser());
+  app.use(express.static(__dirname + '../../'));
+  app.use(express.errorHandler({
+    dumpExceptions: true,
+    showStack: true
+  }));
+  app.use(app.router);
+});
 
-# for python2
-# python -m SimpleHTTPServer 3000
+app.listen(port);
