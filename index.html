@@ -6,12 +6,21 @@
     <script src="js/vendor/jquery/jquery.min.js"></script>
     <script src="js/vendor/handlebars/handlebars.js"></script>
     <script src="js/vendor/ember/ember.js"></script>
+
     <script src="js/vendor/pagedown/Markdown.Converter.js"></script>
     <script src="js/vendor/pagedown/Markdown.Sanitizer.js"></script>
+    <script src="js/app.js"></script>
 
     <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+
+    <script type='text/x-handlebars' data-template-name='application'>
+      {{outlet}}
+    </script>
+
+    <script type='text/x-handlebars' data-template-name='slides'>
+      {{{ controller.model.content }}}
+    </script>
 </head>
 <body>
-  <img style="height:100%; width: 100%" src="/images/sherlock.gif"></img>
 </body>
 </html>
