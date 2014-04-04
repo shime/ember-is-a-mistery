@@ -1,3 +1,5 @@
 [
-  {"id": 1, "location": "slides/1.md"}
+  {"id": 1, "location": "slides/1.md"},
+  {"id": 2, "location": "slides/2.md"},
+  {"id": 3, "location": "slides/3.md"}
 ]
